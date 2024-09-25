@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: #1b1b1bfb;
+        display: grid;
+        place-items: center;
+      }
+      .cradle {
+        height: 50rem;
+        width: 60rem;
+        border-top: 2rem solid white;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 5.6rem;
+      }
+      .cradle div {
+        width: 0.5rem;
+        height: 30rem;
+        background-color: white;
+        position: relative;
+      }
+      .cradle div::after {
+        content: "";
+        width: 6rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 90%;
+        left: -2.7rem;
+      }
+      .cradle div:first-child {
+        animation: slide-left 2s linear infinite;
+        transform-origin: top center;
+      }
+      .cradle div:last-child {
+        animation: slide-right 2s linear 1s infinite;
+        transform-origin: top center;
+      }
+
+      @keyframes slide-left {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: 30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+      @keyframes slide-right {
+        0% {
+          rotate: 0deg;
+        }
+        25% {
+          rotate: -30deg;
+        }
+        50% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 0deg;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="cradle">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
