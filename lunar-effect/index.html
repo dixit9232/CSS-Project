@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lunar effect</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: rgb(255, 157, 0);
+        display: grid;
+        place-items: center;
+        animation: change-color 10s ease-in-out infinite;
+      }
+      @keyframes change-color {
+        0% {
+          background-color: rgb(255, 157, 0);
+        }
+        50% {
+          background-color: black;
+        }
+        100% {
+          background-color: rgb(255, 157, 0);
+        }
+      }
+      .sun {
+        width: 25%;
+        aspect-ratio: 1;
+        background-color: rgb(255, 115, 0);
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          aspect-ratio: 1;
+          border-radius: inherit;
+          background-color: black;
+          animation: move-moon-rtl 10s ease-in-out infinite;
+        }
+      }
+      @keyframes move-moon-rtl {
+        0% {
+          translate: 100%;
+        }
+        50% {
+          translate: 0%;
+          scale: 0.97;
+        }
+        100% {
+          translate: -100%;
+          scale: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sun"></div>
+  </body>
+</html>

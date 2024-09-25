@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Reveal</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+        font-family: Mona Sans;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: #1e1e1e;
+        display: grid;
+        place-items: center;
+      }
+      h1 {
+        font-size: 6.7rem;
+        height: auto;
+        color: aliceblue;
+        text-transform: uppercase;
+
+        position: relative;
+      }
+
+      h1::before {
+        content: "Dixit Pambhar";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 50%;
+        text-transform: uppercase;
+        border-right: 1.5px solid aqua;
+        color: aqua;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: reveal 2s linear infinite;
+      }
+      @keyframes reveal {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 100%;
+        }
+        100% {
+          width: 0%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Dixit Pambhar</h1>
+  </body>
+</html>
